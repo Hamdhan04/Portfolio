@@ -261,7 +261,7 @@ export function Portfolio() {
                   transition={{ duration: 0.2 }}
                 >
                   <MapPin className="w-4 h-4" />
-                  Thiruvarur, India
+                  Chennai, India
                 </motion.div>
               </motion.div>
             </motion.div>
