@@ -1,0 +1,210 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #f5f7fa;
+  --foreground: #1a1a2e;
+  --card: #fafbfc;
+  --card-foreground: #1a1a2e;
+  --popover: #f5f9fc;
+  --popover-foreground: #1a1a2e;
+  --primary: #00bcd4;
+  --primary-foreground: #ffffff;
+  --secondary: #0097a7;
+  --secondary-foreground: #ffffff;
+  --muted: #e0f7fa;
+  --muted-foreground: #546e7a;
+  --accent: #00acc1;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4757;
+  --destructive-foreground: #ffffff;
+  --border: #b2ebf2;
+  --input: #f1f8fb;
+  --input-background: #e0f7fa;
+  --switch-background: #b2ebf2;
+  --font-weight-medium: 600;
+  --font-weight-normal: 500;
+  --ring: #00bcd4;
+  --chart-1: #00bcd4;
+  --chart-2: #4dd0e1;
+  --chart-3: #80deea;
+  --chart-4: #b2ebf2;
+  --chart-5: #e0f7fa;
+  --radius: 1rem;
+  --sidebar: #f8fcff;
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #00bcd4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e0f7fa;
+  --sidebar-accent-foreground: #1a1a2e;
+  --sidebar-border: #b2ebf2;
+  --sidebar-ring: #00bcd4;
+}
+
+.dark {
+  --background: #f5f7fa;
+  --foreground: #1a1a2e;
+  --card: #fafbfc;
+  --card-foreground: #1a1a2e;
+  --popover: #f5f9fc;
+  --popover-foreground: #1a1a2e;
+  --primary: #00bcd4;
+  --primary-foreground: #ffffff;
+  --secondary: #0097a7;
+  --secondary-foreground: #ffffff;
+  --muted: #e0f7fa;
+  --muted-foreground: #546e7a;
+  --accent: #00acc1;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4757;
+  --destructive-foreground: #ffffff;
+  --border: #b2ebf2;
+  --input: #f1f8fb;
+  --ring: #00bcd4;
+  --font-weight-medium: 600;
+  --font-weight-normal: 500;
+  --chart-1: #00bcd4;
+  --chart-2: #4dd0e1;
+  --chart-3: #80deea;
+  --chart-4: #b2ebf2;
+  --chart-5: #e0f7fa;
+  --sidebar: #f8fcff;
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #00bcd4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e0f7fa;
+  --sidebar-accent-foreground: #1a1a2e;
+  --sidebar-border: #b2ebf2;
+  --sidebar-ring: #00bcd4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: radial-gradient(ellipse at top, rgba(0, 188, 212, 0.05) 0%, rgba(245, 247, 250, 1) 50%);
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Custom gradient animations */
+@keyframes gradient-move {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gradient-animation {
+  background: linear-gradient(-45deg, #00bcd4, #4dd0e1, #80deea, #b2ebf2);
+  background-size: 400% 400%;
+  animation: gradient-move 8s ease infinite;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(250, 251, 252, 0.85);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 188, 212, 0.1);
+}
